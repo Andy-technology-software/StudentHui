@@ -1,0 +1,21 @@
+//
+//  SolitaireModel.h
+//  HomeworkHui
+//
+//  Created by 徐仁强 on 2017/5/4.
+//  Copyright © 2017年 徐仁强. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+
+@interface SolitaireModel : NSObject
+@property(nonatomic,copy)NSString* title;
+@property(nonatomic,copy)NSString* beizhu;
+@property(nonatomic,copy)NSString* pnum;
+@property(nonatomic,copy)NSString* time;
+@property (nonatomic, assign) BOOL isSend;
+@property (nonatomic, assign) BOOL isNew;
+
+@property (nonatomic, assign) int uid;
+@property (nonatomic, assign) BOOL isExpand;
+@end
