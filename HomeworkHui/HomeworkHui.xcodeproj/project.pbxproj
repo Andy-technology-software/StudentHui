@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		213FC0D01EBBFC1E006C393E /* new1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0CF1EBBFC1E006C393E /* new1@2x.png */; };
+		213FC0D21EBBFC8D006C393E /* new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0D11EBBFC8D006C393E /* new2@2x.png */; };
+		213FC0D61EBBFFCD006C393E /* ChildInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */; };
+		213FC0DB1EBC0036006C393E /* ChildInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0DA1EBC0036006C393E /* ChildInfoModel.m */; };
+		213FC0DE1EBC0086006C393E /* ChildInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0DD1EBC0086006C393E /* ChildInfoTableViewCell.m */; };
+		213FC0E01EBC0516006C393E /* ok_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0DF1EBC0516006C393E /* ok_select@2x.png */; };
+		213FC0E31EBC088B006C393E /* SolitaireTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E21EBC088B006C393E /* SolitaireTableViewCell.m */; };
+		213FC0E61EBC0894006C393E /* SolitaireDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E51EBC0894006C393E /* SolitaireDetailTableViewCell.m */; };
+		213FC0E91EBC0957006C393E /* SolitaireDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E81EBC0957006C393E /* SolitaireDetailModel.m */; };
 		47D81748EFA43727F0ABEB34 /* libPods-HomeworkHui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878E566B9426F7174A1B924C /* libPods-HomeworkHui.a */; };
 		ECE3847B1EBB5E9800433194 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE3847A1EBB5E9800433194 /* main.m */; };
 		ECE3847E1EBB5E9800433194 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE3847D1EBB5E9800433194 /* AppDelegate.m */; };
@@ -39,7 +48,6 @@
 		ECE3850E1EBB77F100433194 /* child@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE3850C1EBB77F100433194 /* child@2x.png */; };
 		ECE3850F1EBB77F100433194 /* logout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = ECE3850D1EBB77F100433194 /* logout@2x.png */; };
 		ECE385121EBB7A5000433194 /* SolitaireModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE385111EBB7A5000433194 /* SolitaireModel.m */; };
-		ECE385151EBB7AC400433194 /* SolitaireTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE385141EBB7AC400433194 /* SolitaireTableViewCell.m */; };
 		ECE385181EBB81C400433194 /* HistoryModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE385171EBB81C400433194 /* HistoryModel.m */; };
 		ECE3851B1EBB81EC00433194 /* HistoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE3851A1EBB81EC00433194 /* HistoryTableViewCell.m */; };
 		ECE3851E1EBB858E00433194 /* SolitaireDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE3851D1EBB858E00433194 /* SolitaireDetailViewController.m */; };
@@ -75,6 +83,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		213FC0CF1EBBFC1E006C393E /* new1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new1@2x.png"; sourceTree = "<group>"; };
+		213FC0D11EBBFC8D006C393E /* new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new2@2x.png"; sourceTree = "<group>"; };
+		213FC0D41EBBFFCD006C393E /* ChildInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoViewController.h; sourceTree = "<group>"; };
+		213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoViewController.m; sourceTree = "<group>"; };
+		213FC0D91EBC0036006C393E /* ChildInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoModel.h; sourceTree = "<group>"; };
+		213FC0DA1EBC0036006C393E /* ChildInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoModel.m; sourceTree = "<group>"; };
+		213FC0DC1EBC0086006C393E /* ChildInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoTableViewCell.h; sourceTree = "<group>"; };
+		213FC0DD1EBC0086006C393E /* ChildInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoTableViewCell.m; sourceTree = "<group>"; };
+		213FC0DF1EBC0516006C393E /* ok_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok_select@2x.png"; sourceTree = "<group>"; };
+		213FC0E11EBC088B006C393E /* SolitaireTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireTableViewCell.h; sourceTree = "<group>"; };
+		213FC0E21EBC088B006C393E /* SolitaireTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireTableViewCell.m; sourceTree = "<group>"; };
+		213FC0E41EBC0894006C393E /* SolitaireDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireDetailTableViewCell.h; sourceTree = "<group>"; };
+		213FC0E51EBC0894006C393E /* SolitaireDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireDetailTableViewCell.m; sourceTree = "<group>"; };
+		213FC0E71EBC0957006C393E /* SolitaireDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireDetailModel.h; sourceTree = "<group>"; };
+		213FC0E81EBC0957006C393E /* SolitaireDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireDetailModel.m; sourceTree = "<group>"; };
 		6F3BF6C84D104CB39C867039 /* Pods-HomeworkHui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkHui.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeworkHui/Pods-HomeworkHui.debug.xcconfig"; sourceTree = "<group>"; };
 		878E566B9426F7174A1B924C /* libPods-HomeworkHui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HomeworkHui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A97D71DBDC31377E7B7D58E /* Pods-HomeworkHui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkHui.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeworkHui/Pods-HomeworkHui.release.xcconfig"; sourceTree = "<group>"; };
@@ -134,8 +157,6 @@
 		ECE3850D1EBB77F100433194 /* logout@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logout@2x.png"; sourceTree = "<group>"; };
 		ECE385101EBB7A5000433194 /* SolitaireModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireModel.h; sourceTree = "<group>"; };
 		ECE385111EBB7A5000433194 /* SolitaireModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireModel.m; sourceTree = "<group>"; };
-		ECE385131EBB7AC400433194 /* SolitaireTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireTableViewCell.h; sourceTree = "<group>"; };
-		ECE385141EBB7AC400433194 /* SolitaireTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireTableViewCell.m; sourceTree = "<group>"; };
 		ECE385161EBB81C400433194 /* HistoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryModel.h; sourceTree = "<group>"; };
 		ECE385171EBB81C400433194 /* HistoryModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryModel.m; sourceTree = "<group>"; };
 		ECE385191EBB81EC00433194 /* HistoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryTableViewCell.h; sourceTree = "<group>"; };
@@ -183,6 +204,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		213FC0D31EBBFFAE006C393E /* ChildInfo */ = {
+			isa = PBXGroup;
+			children = (
+				213FC0D41EBBFFCD006C393E /* ChildInfoViewController.h */,
+				213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */,
+			);
+			path = ChildInfo;
+			sourceTree = "<group>";
+		};
+		213FC0D71EBC0025006C393E /* ChildInfo */ = {
+			isa = PBXGroup;
+			children = (
+				213FC0D91EBC0036006C393E /* ChildInfoModel.h */,
+				213FC0DA1EBC0036006C393E /* ChildInfoModel.m */,
+			);
+			path = ChildInfo;
+			sourceTree = "<group>";
+		};
+		213FC0D81EBC002A006C393E /* ChildInfo */ = {
+			isa = PBXGroup;
+			children = (
+				213FC0DC1EBC0086006C393E /* ChildInfoTableViewCell.h */,
+				213FC0DD1EBC0086006C393E /* ChildInfoTableViewCell.m */,
+			);
+			path = ChildInfo;
+			sourceTree = "<group>";
+		};
 		C689E5F12EC2AECA5D3C48CA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -269,6 +317,7 @@
 		ECE384AE1EBB5FF700433194 /* C */ = {
 			isa = PBXGroup;
 			children = (
+				213FC0D31EBBFFAE006C393E /* ChildInfo */,
 				ECE384D31EBB63FA00433194 /* Index */,
 				ECE384CF1EBB63B800433194 /* Login */,
 			);
@@ -278,6 +327,7 @@
 		ECE384AF1EBB5FFF00433194 /* V */ = {
 			isa = PBXGroup;
 			children = (
+				213FC0D81EBC002A006C393E /* ChildInfo */,
 				ECE384E91EBB6FA900433194 /* Login */,
 				ECE384E71EBB6F9700433194 /* Solitaire */,
 				ECE384E51EBB6F8900433194 /* History */,
@@ -288,6 +338,7 @@
 		ECE384B01EBB600800433194 /* M */ = {
 			isa = PBXGroup;
 			children = (
+				213FC0D71EBC0025006C393E /* ChildInfo */,
 				ECE384E81EBB6FA400433194 /* Login */,
 				ECE384E61EBB6F9200433194 /* Solitaire */,
 				ECE384E41EBB6F8200433194 /* History */,
@@ -366,6 +417,9 @@
 		ECE384D71EBB65DB00433194 /* I */ = {
 			isa = PBXGroup;
 			children = (
+				213FC0DF1EBC0516006C393E /* ok_select@2x.png */,
+				213FC0D11EBBFC8D006C393E /* new2@2x.png */,
+				213FC0CF1EBBFC1E006C393E /* new1@2x.png */,
 				ECE385391EBB881F00433194 /* share@2x.png */,
 				ECE385351EBB86A300433194 /* 徐仁强工作周报.xlsx */,
 				ECE3851F1EBB85CE00433194 /* 详情(-点击@2x.png */,
@@ -422,6 +476,8 @@
 			children = (
 				ECE385101EBB7A5000433194 /* SolitaireModel.h */,
 				ECE385111EBB7A5000433194 /* SolitaireModel.m */,
+				213FC0E71EBC0957006C393E /* SolitaireDetailModel.h */,
+				213FC0E81EBC0957006C393E /* SolitaireDetailModel.m */,
 			);
 			path = Solitaire;
 			sourceTree = "<group>";
@@ -429,8 +485,10 @@
 		ECE384E71EBB6F9700433194 /* Solitaire */ = {
 			isa = PBXGroup;
 			children = (
-				ECE385131EBB7AC400433194 /* SolitaireTableViewCell.h */,
-				ECE385141EBB7AC400433194 /* SolitaireTableViewCell.m */,
+				213FC0E11EBC088B006C393E /* SolitaireTableViewCell.h */,
+				213FC0E21EBC088B006C393E /* SolitaireTableViewCell.m */,
+				213FC0E41EBC0894006C393E /* SolitaireDetailTableViewCell.h */,
+				213FC0E51EBC0894006C393E /* SolitaireDetailTableViewCell.m */,
 			);
 			path = Solitaire;
 			sourceTree = "<group>";
@@ -605,13 +663,16 @@
 			files = (
 				ECE3850F1EBB77F100433194 /* logout@2x.png in Resources */,
 				ECE385361EBB86A300433194 /* 徐仁强工作周报.xlsx in Resources */,
+				213FC0E01EBC0516006C393E /* ok_select@2x.png in Resources */,
 				ECE385311EBB864400433194 /* TTOpenInAppActivity8.png in Resources */,
 				ECE3850E1EBB77F100433194 /* child@2x.png in Resources */,
+				213FC0D21EBBFC8D006C393E /* new2@2x.png in Resources */,
 				ECE384EB1EBB708900433194 /* new@2x.png in Resources */,
 				ECE3852E1EBB864400433194 /* TTOpenInAppActivity.png in Resources */,
 				ECE385011EBB74FE00433194 /* menu_facetoface@3x.png in Resources */,
 				ECE385341EBB864400433194 /* TTOpenInAppActivity@2x.png in Resources */,
 				ECE385331EBB864400433194 /* TTOpenInAppActivity8@3x.png in Resources */,
+				213FC0D01EBBFC1E006C393E /* new1@2x.png in Resources */,
 				ECE3852F1EBB864400433194 /* TTOpenInAppActivity7.png in Resources */,
 				ECE3853A1EBB881F00433194 /* share@2x.png in Resources */,
 				ECE385051EBB74FE00433194 /* menu_sendFile@3x.png in Resources */,
@@ -701,13 +762,16 @@
 				ECE384F81EBB74D800433194 /* XLPopMenuViewSingleton.m in Sources */,
 				ECE384C91EBB627D00433194 /* RegularExpressions.m in Sources */,
 				ECE384CA1EBB627D00433194 /* UITableView+HYBCacheHeight.m in Sources */,
-				ECE385151EBB7AC400433194 /* SolitaireTableViewCell.m in Sources */,
+				213FC0E31EBC088B006C393E /* SolitaireTableViewCell.m in Sources */,
 				ECE384F71EBB74D800433194 /* XLPopMenuViewModel.m in Sources */,
 				ECE384CC1EBB627D00433194 /* EZHHttpClenit.m in Sources */,
 				ECE384F61EBB74D800433194 /* XLPopMenuView.m in Sources */,
 				ECE384C61EBB627D00433194 /* BaseViewController.m in Sources */,
 				ECE384C81EBB627D00433194 /* MyController.m in Sources */,
 				ECE384DF1EBB68B200433194 /* HistoryViewController.m in Sources */,
+				213FC0D61EBBFFCD006C393E /* ChildInfoViewController.m in Sources */,
+				213FC0DE1EBC0086006C393E /* ChildInfoTableViewCell.m in Sources */,
+				213FC0E61EBC0894006C393E /* SolitaireDetailTableViewCell.m in Sources */,
 				ECE3851B1EBB81EC00433194 /* HistoryTableViewCell.m in Sources */,
 				ECE384CB1EBB627D00433194 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */,
 				ECE3852D1EBB864400433194 /* TTOpenInAppActivity.m in Sources */,
@@ -718,6 +782,8 @@
 				ECE384F51EBB74D800433194 /* XLMenuViewCell.m in Sources */,
 				ECE385181EBB81C400433194 /* HistoryModel.m in Sources */,
 				ECE3847B1EBB5E9800433194 /* main.m in Sources */,
+				213FC0DB1EBC0036006C393E /* ChildInfoModel.m in Sources */,
+				213FC0E91EBC0957006C393E /* SolitaireDetailModel.m in Sources */,
 				ECE385121EBB7A5000433194 /* SolitaireModel.m in Sources */,
 				ECE384D61EBB640400433194 /* IndexViewController.m in Sources */,
 			);

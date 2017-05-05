@@ -27,6 +27,8 @@
     return self;
 }
 - (void)makeUI{
+    self.contentView.backgroundColor = [UIColor whiteColor];
+    
     self.titleLable = [[UILabel alloc] init];
     [self.contentView addSubview:self.titleLable];
     self.titleLable.numberOfLines = 0;
@@ -34,7 +36,7 @@
     
     [self.titleLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(10);
-        make.top.mas_equalTo(5);
+        make.top.mas_equalTo(10);
         make.right.mas_equalTo(-10);
     }];
     
@@ -46,7 +48,7 @@
     
     [self.beizhuLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.titleLable);
-        make.top.mas_equalTo(self.titleLable.mas_bottom).mas_offset(5);
+        make.top.mas_equalTo(self.titleLable.mas_bottom).mas_offset(10);
         make.right.mas_equalTo(self.titleLable);
     }];
     
@@ -70,7 +72,7 @@
     [self.lineView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(0);
         make.right.mas_equalTo(0);
-        make.top.mas_equalTo(self.timeLable.mas_bottom).mas_offset(5);
+        make.top.mas_equalTo(self.timeLable.mas_bottom).mas_offset(10);
         make.height.mas_offset(0.5);
     }];
     

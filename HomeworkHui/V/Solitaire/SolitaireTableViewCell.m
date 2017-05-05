@@ -109,7 +109,7 @@
     // 必须加上这句
     self.hyb_lastViewInCell = self.lineView;
     self.hyb_bottomOffsetToCell = 0;
-
+    
     
 }
 - (void)configCellWithModel:(SolitaireModel *)model {

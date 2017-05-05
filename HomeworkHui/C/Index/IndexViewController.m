@@ -15,6 +15,8 @@
 #import "XLPopMenuViewModel.h"
 
 #import "XLPopMenuViewSingleton.h"
+
+#import "ChildInfoViewController.h"
 @interface IndexViewController ()
 @property (nonatomic, strong) UISegmentedControl *segment;
 @property (nonatomic,strong) NSMutableArray *arr;
@@ -116,6 +118,9 @@
         NSLog(@"index= %ld",(long)index);
         if (1 == index) {
             [(AppDelegate *)[UIApplication sharedApplication].delegate setLoginRoot];
+        }else if (0 == index){
+            ChildInfoViewController* vc = [[ChildInfoViewController alloc] init];
+            [self.navigationController pushViewController:vc animated:YES];
         }
     }];
 }
