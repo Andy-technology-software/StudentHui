@@ -65,7 +65,7 @@
             advertisingIdentifier:nil];
     
     NSArray* dataArr = [[NSArray alloc] init];
-    if (!dataArr.count) {
+    if (dataArr.count) {
         //设置推送别名
         [JPUSHService setAlias:@"111111" callbackSelector:@selector(callBack) object:nil];
         [self setRootVC];
