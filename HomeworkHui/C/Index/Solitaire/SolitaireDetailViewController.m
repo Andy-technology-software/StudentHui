@@ -13,6 +13,7 @@
 #import "SolitaireDetailTableViewCell.h"
 @interface SolitaireDetailViewController ()<UITableViewDelegate,UITableViewDataSource>{
     UITableView* _tableView;
+    FDAlertView *alert;
 }
 //分享
 @property (nonatomic, strong) UIPopoverController *activityPopoverController;
@@ -26,6 +27,7 @@
 @property(nonatomic,assign)NSInteger pageIndex;
 //文件路径
 @property(nonatomic,copy)NSString* filePath;
+@property(nonatomic,retain)UIView* popView;
 @end
 
 @implementation SolitaireDetailViewController
@@ -43,8 +45,68 @@
     [self makeData];
     
     [self createTableView];
+    
+    if (!self.isSend) {
+        [self makeSendUI];
+    }
+    
+    [_tableView.mj_header beginRefreshing];
 }
 
+- (void)makeSendUI{
+    UIButton* sendBtn = [MyController createButtonWithFrame:CGRectMake(0, CGRectGetMaxY(_tableView.frame), [MyController getScreenWidth], 50) ImageName:nil Target:self Action:@selector(sendBtnClick) Title:@"一键接龙"];
+    [sendBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [sendBtn setBackgroundColor:[MyController colorWithHexString:@"009588"]];
+    [self.view addSubview:sendBtn];
+}
+
+- (void)sendBtnClick{
+    NSLog(@"接龙");
+    self.popView = [MyController createImageViewWithFrame:CGRectMake(20, [MyController getScreenHeight] / 2 - 100, [MyController getScreenWidth] - 40, 200) ImageName:nil];
+    self.popView.backgroundColor = [MyController colorWithHexString:@"6b7479"];
+    
+    UIView* bv = [MyController createImageViewWithFrame:CGRectMake(0, 0, self.popView.frame.size.width, 200) ImageName:nil];
+    bv.backgroundColor = [UIColor whiteColor];
+    [self.popView addSubview:bv];
+    
+    UITextView* tv = [[UITextView alloc] initWithFrame:CGRectMake(20, 20, self.popView.frame.size.width - 40, 120)];
+    tv.placeholder = @"您可以在这说点什么。。。。";
+    tv.tag = 10086;
+    tv.font = [UIFont systemFontOfSize:14];
+    tv.layer.borderColor= [UIColor lightGrayColor].CGColor;
+    tv.layer.borderWidth= 0.5;
+    [self.popView addSubview:tv];
+    
+    UIButton* sureBtn = [MyController createButtonWithFrame:CGRectMake(0, self.popView.frame.size.height - 50, self.popView.frame.size.width / 2, 50) ImageName:nil Target:self Action:@selector(sureBtnClick) Title:@"确定"];
+    [sureBtn setBackgroundColor:[MyController colorWithHexString:@"009588"]];
+    [sureBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    sureBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.popView addSubview:sureBtn];
+    
+    UIButton* cancleBtn = [MyController createButtonWithFrame:CGRectMake(self.popView.frame.size.width / 2, sureBtn.frame.origin.y, self.popView.frame.size.width / 2, 50) ImageName:nil Target:self Action:@selector(cancleBtnClick) Title:@"取消"];
+    [cancleBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    cancleBtn.titleLabel.font = [UIFont systemFontOfSize:14];
+    [self.popView addSubview:cancleBtn];
+    
+    UIView* linV = [MyController viewWithFrame:CGRectMake(0, sureBtn.frame.origin.y, self.popView.frame.size.width, 0.5)];
+    linV.backgroundColor = [MyController colorWithHexString:@"d8d8d8"];
+    [self.popView addSubview:linV];
+    
+    alert = [[FDAlertView alloc] init];
+    alert.contentView = self.popView;
+    [alert show];
+}
+
+#pragma mark - 确定响应
+- (void)sureBtnClick{
+    UITextView* tf = (UITextView*)[self.popView viewWithTag:10086];
+    [alert hide];
+    //        [HUD loading];
+    //        [self createBindingICCard];
+}
+- (void)cancleBtnClick{
+    [alert hide];
+}
 - (void)makeRightItem{
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]
                                               initWithImage:[UIImage imageNamed:@"share"]
@@ -52,6 +114,7 @@
                                               target:self
                                               action:@selector(rihgtBtnAction)];
 }
+
 - (void)rihgtBtnAction{
 //    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"英语接龙" ofType:@"xlsx"];
     NSURL *URL = [NSURL fileURLWithPath:self.filePath];
@@ -80,6 +143,10 @@
         model.name = @"小明";
         model.time = @"2017-05-04";
         model.beizhu = @"这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注";
+        model.isSelf = NO;
+        if (i == 6) {
+            model.isSelf = YES;
+        }
         [self.dataSourceArr addObject:model];
     }
     
@@ -88,7 +155,11 @@
 #pragma mark - 初始化tableView
 - (void)createTableView{
     self.automaticallyAdjustsScrollViewInsets = NO;
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [MyController isIOS7], self.view.frame.size.width, self.view.frame.size.height - [MyController isIOS7]) style:UITableViewStylePlain];
+    if (!self.isSend) {
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [MyController isIOS7], self.view.frame.size.width, self.view.frame.size.height - [MyController isIOS7] - 50) style:UITableViewStylePlain];
+    }else{
+        _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, [MyController isIOS7], self.view.frame.size.width, self.view.frame.size.height - [MyController isIOS7]) style:UITableViewStylePlain];
+    }
     _tableView.dataSource = self;
     _tableView.delegate = self;
     UIImageView *tableBg = [[UIImageView alloc] initWithImage:nil];
@@ -97,6 +168,18 @@
     _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _tableView.showsVerticalScrollIndicator = NO;
     [self.view addSubview:_tableView];
+    
+    _tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
+        // 进入刷新状态后会自动调用这个block
+        [self headRefresh];
+    }];
+}
+
+#pragma mark - 下拉刷新
+- (void)headRefresh{
+    self.pageIndex = 1;
+    //    [self createRequest];
+    [_tableView.mj_header endRefreshing];
 }
 
 #pragma mark - tableView行数

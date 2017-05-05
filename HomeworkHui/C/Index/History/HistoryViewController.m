@@ -11,6 +11,8 @@
 #import "HistoryModel.h"
 
 #import "HistoryTableViewCell.h"
+
+#import "HistoryDetailViewController.h"
 @interface HistoryViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView* _tableView;
 }
@@ -86,7 +88,8 @@
 
 #pragma mark - tableVie点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    
+    HistoryDetailViewController* vc = [[HistoryDetailViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - 自定义tableView

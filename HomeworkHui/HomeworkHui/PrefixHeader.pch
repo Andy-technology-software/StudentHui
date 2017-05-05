@@ -37,4 +37,7 @@
 #import "JVFloatLabeledTextField.h"
 #import "JVFloatLabeledTextView.h"
 #import "TTOpenInAppActivity.h"
+#import "NSDate+Helper.h"
+#import "FDAlertView.h"
+#import "UITextView+placeholder.h"
 #endif /* PrefixHeader_pch */

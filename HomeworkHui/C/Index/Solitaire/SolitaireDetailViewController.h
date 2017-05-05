@@ -9,5 +9,5 @@
 #import "BaseViewController.h"
 
 @interface SolitaireDetailViewController : BaseViewController
-
+@property(nonatomic,assign)BOOL isSend;
 @end

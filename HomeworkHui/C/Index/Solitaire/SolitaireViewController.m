@@ -93,9 +93,8 @@
 #pragma mark - tableVie点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     SolitaireModel* model = self.dataSourceArr[indexPath.row];
-    if (model.isSend) {
-    }
     SolitaireDetailViewController* vc = [[SolitaireDetailViewController alloc] init];
+    vc.isSend = model.isSend;
     [self.navigationController pushViewController:vc animated:YES];
 }
 

@@ -16,6 +16,13 @@
 		213FC0E31EBC088B006C393E /* SolitaireTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E21EBC088B006C393E /* SolitaireTableViewCell.m */; };
 		213FC0E61EBC0894006C393E /* SolitaireDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E51EBC0894006C393E /* SolitaireDetailTableViewCell.m */; };
 		213FC0E91EBC0957006C393E /* SolitaireDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E81EBC0957006C393E /* SolitaireDetailModel.m */; };
+		213FC0EC1EBC4D2F006C393E /* HistoryDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0EB1EBC4D2F006C393E /* HistoryDetailViewController.m */; };
+		213FC0EF1EBC4D7B006C393E /* HistoryDetailModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0EE1EBC4D7B006C393E /* HistoryDetailModel.m */; };
+		213FC0F21EBC4E58006C393E /* HistoryDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0F11EBC4E58006C393E /* HistoryDetailTableViewCell.m */; };
+		213FC0F61EBC5572006C393E /* NSDate+Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0F51EBC5572006C393E /* NSDate+Helper.m */; };
+		213FC0FA1EBC6819006C393E /* FDAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0F91EBC6819006C393E /* FDAlertView.m */; };
+		213FC0FE1EBC6A83006C393E /* UITextView+placeholder.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0FD1EBC6A83006C393E /* UITextView+placeholder.m */; };
+		213FC1011EBC7327006C393E /* LoginModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC1001EBC7327006C393E /* LoginModel.m */; };
 		47D81748EFA43727F0ABEB34 /* libPods-HomeworkHui.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 878E566B9426F7174A1B924C /* libPods-HomeworkHui.a */; };
 		ECE3847B1EBB5E9800433194 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE3847A1EBB5E9800433194 /* main.m */; };
 		ECE3847E1EBB5E9800433194 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = ECE3847D1EBB5E9800433194 /* AppDelegate.m */; };
@@ -98,6 +105,20 @@
 		213FC0E51EBC0894006C393E /* SolitaireDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireDetailTableViewCell.m; sourceTree = "<group>"; };
 		213FC0E71EBC0957006C393E /* SolitaireDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolitaireDetailModel.h; sourceTree = "<group>"; };
 		213FC0E81EBC0957006C393E /* SolitaireDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SolitaireDetailModel.m; sourceTree = "<group>"; };
+		213FC0EA1EBC4D2F006C393E /* HistoryDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailViewController.h; sourceTree = "<group>"; };
+		213FC0EB1EBC4D2F006C393E /* HistoryDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailViewController.m; sourceTree = "<group>"; };
+		213FC0ED1EBC4D7B006C393E /* HistoryDetailModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailModel.h; sourceTree = "<group>"; };
+		213FC0EE1EBC4D7B006C393E /* HistoryDetailModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailModel.m; sourceTree = "<group>"; };
+		213FC0F01EBC4E58006C393E /* HistoryDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryDetailTableViewCell.h; sourceTree = "<group>"; };
+		213FC0F11EBC4E58006C393E /* HistoryDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryDetailTableViewCell.m; sourceTree = "<group>"; };
+		213FC0F41EBC5572006C393E /* NSDate+Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+Helper.h"; sourceTree = "<group>"; };
+		213FC0F51EBC5572006C393E /* NSDate+Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+Helper.m"; sourceTree = "<group>"; };
+		213FC0F81EBC6819006C393E /* FDAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FDAlertView.h; sourceTree = "<group>"; };
+		213FC0F91EBC6819006C393E /* FDAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FDAlertView.m; sourceTree = "<group>"; };
+		213FC0FC1EBC6A83006C393E /* UITextView+placeholder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITextView+placeholder.h"; sourceTree = "<group>"; };
+		213FC0FD1EBC6A83006C393E /* UITextView+placeholder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITextView+placeholder.m"; sourceTree = "<group>"; };
+		213FC0FF1EBC7327006C393E /* LoginModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginModel.h; path = V/History/LoginModel.h; sourceTree = SOURCE_ROOT; };
+		213FC1001EBC7327006C393E /* LoginModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginModel.m; path = V/History/LoginModel.m; sourceTree = SOURCE_ROOT; };
 		6F3BF6C84D104CB39C867039 /* Pods-HomeworkHui.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkHui.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HomeworkHui/Pods-HomeworkHui.debug.xcconfig"; sourceTree = "<group>"; };
 		878E566B9426F7174A1B924C /* libPods-HomeworkHui.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-HomeworkHui.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A97D71DBDC31377E7B7D58E /* Pods-HomeworkHui.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HomeworkHui.release.xcconfig"; path = "Pods/Target Support Files/Pods-HomeworkHui/Pods-HomeworkHui.release.xcconfig"; sourceTree = "<group>"; };
@@ -231,6 +252,33 @@
 			path = ChildInfo;
 			sourceTree = "<group>";
 		};
+		213FC0F31EBC5572006C393E /* DataPacker */ = {
+			isa = PBXGroup;
+			children = (
+				213FC0F41EBC5572006C393E /* NSDate+Helper.h */,
+				213FC0F51EBC5572006C393E /* NSDate+Helper.m */,
+			);
+			path = DataPacker;
+			sourceTree = "<group>";
+		};
+		213FC0F71EBC6819006C393E /* FDAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				213FC0F81EBC6819006C393E /* FDAlertView.h */,
+				213FC0F91EBC6819006C393E /* FDAlertView.m */,
+			);
+			path = FDAlertView;
+			sourceTree = "<group>";
+		};
+		213FC0FB1EBC6A83006C393E /* MyTextView */ = {
+			isa = PBXGroup;
+			children = (
+				213FC0FC1EBC6A83006C393E /* UITextView+placeholder.h */,
+				213FC0FD1EBC6A83006C393E /* UITextView+placeholder.m */,
+			);
+			path = MyTextView;
+			sourceTree = "<group>";
+		};
 		C689E5F12EC2AECA5D3C48CA /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +397,9 @@
 		ECE384B11EBB601200433194 /* L */ = {
 			isa = PBXGroup;
 			children = (
+				213FC0FB1EBC6A83006C393E /* MyTextView */,
+				213FC0F71EBC6819006C393E /* FDAlertView */,
+				213FC0F31EBC5572006C393E /* DataPacker */,
 				ECE385231EBB864400433194 /* TTOpenInAppActivity */,
 				ECE384EC1EBB74D800433194 /* PopMenuView */,
 				ECE384B21EBB627D00433194 /* commonTools */,
@@ -449,6 +500,8 @@
 			children = (
 				ECE384DD1EBB68B200433194 /* HistoryViewController.h */,
 				ECE384DE1EBB68B200433194 /* HistoryViewController.m */,
+				213FC0EA1EBC4D2F006C393E /* HistoryDetailViewController.h */,
+				213FC0EB1EBC4D2F006C393E /* HistoryDetailViewController.m */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -458,6 +511,8 @@
 			children = (
 				ECE385161EBB81C400433194 /* HistoryModel.h */,
 				ECE385171EBB81C400433194 /* HistoryModel.m */,
+				213FC0ED1EBC4D7B006C393E /* HistoryDetailModel.h */,
+				213FC0EE1EBC4D7B006C393E /* HistoryDetailModel.m */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -467,6 +522,8 @@
 			children = (
 				ECE385191EBB81EC00433194 /* HistoryTableViewCell.h */,
 				ECE3851A1EBB81EC00433194 /* HistoryTableViewCell.m */,
+				213FC0F01EBC4E58006C393E /* HistoryDetailTableViewCell.h */,
+				213FC0F11EBC4E58006C393E /* HistoryDetailTableViewCell.m */,
 			);
 			path = History;
 			sourceTree = "<group>";
@@ -496,6 +553,8 @@
 		ECE384E81EBB6FA400433194 /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				213FC0FF1EBC7327006C393E /* LoginModel.h */,
+				213FC1001EBC7327006C393E /* LoginModel.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -759,8 +818,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECE384C71EBB627D00433194 /* HUD.m in Sources */,
+				213FC0F21EBC4E58006C393E /* HistoryDetailTableViewCell.m in Sources */,
 				ECE384F81EBB74D800433194 /* XLPopMenuViewSingleton.m in Sources */,
 				ECE384C91EBB627D00433194 /* RegularExpressions.m in Sources */,
+				213FC0EF1EBC4D7B006C393E /* HistoryDetailModel.m in Sources */,
+				213FC0EC1EBC4D2F006C393E /* HistoryDetailViewController.m in Sources */,
 				ECE384CA1EBB627D00433194 /* UITableView+HYBCacheHeight.m in Sources */,
 				213FC0E31EBC088B006C393E /* SolitaireTableViewCell.m in Sources */,
 				ECE384F71EBB74D800433194 /* XLPopMenuViewModel.m in Sources */,
@@ -775,8 +837,10 @@
 				ECE3851B1EBB81EC00433194 /* HistoryTableViewCell.m in Sources */,
 				ECE384CB1EBB627D00433194 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */,
 				ECE3852D1EBB864400433194 /* TTOpenInAppActivity.m in Sources */,
+				213FC0F61EBC5572006C393E /* NSDate+Helper.m in Sources */,
 				ECE384DC1EBB68A900433194 /* SolitaireViewController.m in Sources */,
 				ECE3851E1EBB858E00433194 /* SolitaireDetailViewController.m in Sources */,
+				213FC0FE1EBC6A83006C393E /* UITextView+placeholder.m in Sources */,
 				ECE3847E1EBB5E9800433194 /* AppDelegate.m in Sources */,
 				ECE384D21EBB63D200433194 /* LoginViewController.m in Sources */,
 				ECE384F51EBB74D800433194 /* XLMenuViewCell.m in Sources */,
@@ -784,8 +848,10 @@
 				ECE3847B1EBB5E9800433194 /* main.m in Sources */,
 				213FC0DB1EBC0036006C393E /* ChildInfoModel.m in Sources */,
 				213FC0E91EBC0957006C393E /* SolitaireDetailModel.m in Sources */,
+				213FC0FA1EBC6819006C393E /* FDAlertView.m in Sources */,
 				ECE385121EBB7A5000433194 /* SolitaireModel.m in Sources */,
 				ECE384D61EBB640400433194 /* IndexViewController.m in Sources */,
+				213FC1011EBC7327006C393E /* LoginModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

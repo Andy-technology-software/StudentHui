@@ -100,6 +100,17 @@
     self.nameLable.text = model.name;
     self.timeLable.text = model.time;
     self.beizhuLable.text = model.beizhu;
+    if (model.isSelf) {
+        self.xuhaoLable.textColor = [MyController colorWithHexString:@"00BFFF"];
+        self.nameLable.textColor = [MyController colorWithHexString:@"00BFFF"];
+        self.timeLable.textColor = [MyController colorWithHexString:@"00BFFF"];
+        self.beizhuLable.textColor = [MyController colorWithHexString:@"00BFFF"];
+    }else{
+        self.xuhaoLable.textColor = [MyController colorWithHexString:@"000000"];
+        self.nameLable.textColor = [MyController colorWithHexString:@"000000"];
+        self.timeLable.textColor = [MyController colorWithHexString:@"000000"];
+        self.beizhuLable.textColor = [MyController colorWithHexString:@"000000"];
+    }
 }
 
 

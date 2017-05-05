@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 
+#import "LoginModel.h"
 @interface LoginViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView* _tableView;
 }
@@ -107,6 +108,15 @@
         return;
     }else{
 //        [HUD loading];
+        NSDictionary *dict = @{
+                               @"name" : @"小花",
+                               @"school" : @"实验小学1年级1班"
+                               };
+        
+        // This demo just provide simple steps
+        NSManagedObjectContext *context = nil;
+        LoginModel *user = [LoginModel mj_objectWithKeyValues:dict context:context];
+        
         [(AppDelegate *)[UIApplication sharedApplication].delegate setRootVC];
     }
     
