@@ -984,9 +984,11 @@
 			baseConfigurationReference = 6F3BF6C84D104CB39C867039 /* Pods-HomeworkHui.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: bin kong (B72AWBHP8L)";
 				DEVELOPMENT_TEAM = H289V77672;
 				GCC_PREFIX_HEADER = HomeworkHui/PrefixHeader.pch;
 				INFOPLIST_FILE = HomeworkHui/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andy.HomeworkHui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1000,9 +1002,11 @@
 			baseConfigurationReference = 9A97D71DBDC31377E7B7D58E /* Pods-HomeworkHui.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: bin kong (B72AWBHP8L)";
 				DEVELOPMENT_TEAM = H289V77672;
 				GCC_PREFIX_HEADER = HomeworkHui/PrefixHeader.pch;
 				INFOPLIST_FILE = HomeworkHui/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.andy.HomeworkHui;
 				PRODUCT_NAME = "$(TARGET_NAME)";
