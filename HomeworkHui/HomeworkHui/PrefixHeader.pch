@@ -43,4 +43,6 @@
 
 #import "EZHHttpClenit.h"
 #import "RequestService.h"
+#import "ChildInfoModel.h"
+#import "UserInfoModel.h"
 #endif /* PrefixHeader_pch */

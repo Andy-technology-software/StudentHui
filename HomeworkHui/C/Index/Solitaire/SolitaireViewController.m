@@ -33,6 +33,8 @@
     [self createTableView];
     
     [_tableView.mj_header beginRefreshing];
+    
+//    [self createRequest];
 }
 - (void)makeData{
     for (int i = 0; i < 10; i++) {
@@ -139,6 +141,16 @@
     }];
 }
 
+- (void)createRequest{
+    [RequestService postTasklistWithStudentId:@"1" AndClassId:@"1" complate:^(id responseObject) {
+        NSLog(@"任务列表----%@",responseObject[@"data"]);
+        NSArray* dataArr = [MyController arraryWithJsonString:responseObject[@"data"]];
+        self.dataSourceArr = [SolitaireModel mj_objectArrayWithKeyValuesArray:dataArr];
+        [_tableView reloadData];
+    } failure:^(NSError *error) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

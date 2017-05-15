@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-@class ChildInfoModel;
+@class ChildInfomationModel;
 @interface ChildInfoTableViewCell : UITableViewCell
-- (void)configCellWithModel:(ChildInfoModel *)model;
+- (void)configCellWithModel:(ChildInfomationModel *)model;
 
 @end

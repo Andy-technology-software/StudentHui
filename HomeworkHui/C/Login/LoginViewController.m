@@ -8,8 +8,6 @@
 
 #import "LoginViewController.h"
 
-#import "LoginModel.h"
-
 #import "ChildInfoModel.h"
 
 #import "UserInfoModel.h"
@@ -20,6 +18,9 @@
 @property(nonatomic,retain)JVFloatLabeledTextField *nameTF;
 @property(nonatomic,strong)UIView* lineView;
 @property(nonatomic,retain)UIButton* dengluBtn;
+
+@property(nonatomic,strong)NSMutableArray* childArr;
+@property(nonatomic,strong)NSMutableArray* userArr;
 @end
 
 @implementation LoginViewController
@@ -28,7 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor greenColor];
-    
+    self.childArr = [[NSMutableArray alloc] init];
+    self.userArr = [[NSMutableArray alloc] init];
     [self createTableView];
 }
 #pragma mark - 初始化tableView
@@ -71,6 +73,7 @@
     self.nameTF.floatingLabelTextColor = [UIColor brownColor];
     self.nameTF.translatesAutoresizingMaskIntoConstraints = NO;
     self.nameTF.keyboardType = UIKeyboardTypeNumberPad;
+    self.nameTF.text = @"18561927376";
     [cell addSubview:self.nameTF];
     
     [self.nameTF mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,9 +116,33 @@
     }else{
 //        [HUD loading];
         [RequestService postLoginWithUsername:self.nameTF.text AndDevType:@"1" complate:^(id responseObject) {
-//            ChildInfoModel* model = [ChildInfoModel mj_objectWithKeyValues:responseObject[@"data"][@"childInfo"]];
-//            [(AppDelegate *)[UIApplication sharedApplication].delegate setRootVC];
-            NSLog(@"登录请求成功---%@",responseObject[@"data"]);
+            NSDictionary* cDic = [MyController dictionaryWithJsonString:responseObject[@"data"]];
+            NSArray* cA = cDic[@"childInfo"];
+            //存小孩信息
+            for (int i = 0; i < cA.count; i++) {
+                ChildInfoModel* model = [ChildInfoModel mj_objectWithKeyValues:cA[i]];
+                [self.childArr addObject:[NSKeyedArchiver archivedDataWithRootObject:model]];
+            }
+            NSArray * tarray = [NSArray arrayWithArray:self.childArr];
+            NSUserDefaults *child = [NSUserDefaults standardUserDefaults];
+            [child setObject:tarray forKey:@"cModel"];
+            
+            //存储当前小孩子  防止有多个孩子
+            NSUserDefaults *cMCurrent = [NSUserDefaults standardUserDefaults];
+            [cMCurrent setObject:[self.childArr lastObject] forKey:@"cMCurrent"];
+            
+            //存大人信息
+            UserInfoModel* model1 = [UserInfoModel mj_objectWithKeyValues:cDic[@"userInfo"]];
+            NSLog(@"-----%@",model1.address);
+            [self.userArr addObject:model1];
+            
+            NSData *udata = [NSKeyedArchiver archivedDataWithRootObject:model1];
+            NSUserDefaults *userM = [NSUserDefaults standardUserDefaults];
+            [userM setObject:udata forKey:@"uModel"];
+            
+            
+            
+            [(AppDelegate *)[UIApplication sharedApplication].delegate setRootVC];
         } failure:^(NSError *error) {
             
         }];

@@ -31,6 +31,21 @@
     [self configureNav];
     
     [self configureUI];
+    
+    //取出本地存储大人信息
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSData *udata = [user objectForKey:@"uModel"];
+    UserInfoModel *umodel = [NSKeyedUnarchiver unarchiveObjectWithData:udata];
+    NSLog(@"---%@",umodel.name);
+    
+    //取出本地存储小孩信息
+    NSUserDefaults *child = [NSUserDefaults standardUserDefaults];
+    NSArray *cArr = [child arrayForKey:@"cModel"];
+    ChildInfoModel* cmodel = [NSKeyedUnarchiver unarchiveObjectWithData:[cArr lastObject]];
+    NSLog(@"---%@",cmodel.name);
+    
+    
+    
 }
 - (void)configureUI{
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -79,7 +94,13 @@
                                               style:UIBarButtonItemStylePlain
                                               target:self
                                               action:@selector(leftBtnAction)];
-    self.navigationItem.leftBarButtonItem.title = @"娃:小明";
+    
+    //取出当前小孩
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSData *udata = [user objectForKey:@"cMCurrent"];
+    ChildInfoModel *umodel = [NSKeyedUnarchiver unarchiveObjectWithData:udata];
+    NSLog(@"---%@",umodel.name);
+    self.navigationItem.leftBarButtonItem.title = [NSString stringWithFormat:@"娃：%@",umodel.name];
     
 }
 - (void)segmentAction:(UISegmentedControl *)sender{
@@ -139,7 +160,6 @@
     return @[@"child",
              @"logout"];
 }
-
 
 /*
 #pragma mark - Navigation

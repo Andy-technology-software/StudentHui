@@ -8,7 +8,7 @@
 
 #import "ChildInfoTableViewCell.h"
 
-#import "ChildInfoModel.h"
+#import "ChildInfomationModel.h"
 
 @interface ChildInfoTableViewCell()
 @property(nonatomic,strong)UILabel* nameLable;
@@ -83,7 +83,7 @@
 
 }
 
-- (void)configCellWithModel:(ChildInfoModel *)model {
+- (void)configCellWithModel:(ChildInfomationModel *)model {
     self.nameLable.text = model.name;
     self.classNumLable.text = model.classNum;
     if (model.isCurrnet) {

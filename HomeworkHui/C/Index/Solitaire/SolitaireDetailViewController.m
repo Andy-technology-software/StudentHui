@@ -42,14 +42,13 @@
     self.view.backgroundColor = [UIColor whiteColor];
     self.dataSourceArr = [[NSMutableArray alloc] init];
     
-    [self makeData];
-    
     [self createTableView];
     
     if (!self.isSend) {
         [self makeSendUI];
     }
     
+    [self createRequest];
     [_tableView.mj_header beginRefreshing];
 }
 
@@ -136,22 +135,22 @@
     }
 }
 
-- (void)makeData{
-    for (int i = 0; i < 10; i++) {
-        SolitaireDetailModel* model = [[SolitaireDetailModel alloc] init];
-        model.xuhao = [NSString stringWithFormat:@"%d",i + 1];
-        model.name = @"小明";
-        model.time = @"2017-05-04";
-        model.beizhu = @"这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注";
-        model.isSelf = NO;
-        if (i == 6) {
-            model.isSelf = YES;
-        }
-        [self.dataSourceArr addObject:model];
-    }
-    
-    [self createXLSFile];
-}
+//- (void)makeData{
+//    for (int i = 0; i < 10; i++) {
+//        SolitaireDetailModel* model = [[SolitaireDetailModel alloc] init];
+//        model.xuhao = [NSString stringWithFormat:@"%d",i + 1];
+//        model.name = @"小明";
+//        model.time = @"2017-05-04";
+//        model.beizhu = @"这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注";
+//        model.isSelf = NO;
+//        if (i == 6) {
+//            model.isSelf = YES;
+//        }
+//        [self.dataSourceArr addObject:model];
+//    }
+//    
+//    [self createXLSFile];
+//}
 #pragma mark - 初始化tableView
 - (void)createTableView{
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -299,10 +298,10 @@
     // 100行数据
     for (int i = 0; i < self.dataSourceArr.count; i ++) {
         SolitaireDetailModel* model = self.dataSourceArr[i];
-        [xlsDataMuArr addObject:model.xuhao];
-        [xlsDataMuArr addObject:model.name];
-        [xlsDataMuArr addObject:model.time];
-        [xlsDataMuArr addObject:model.beizhu];
+        [xlsDataMuArr addObject:model.sID];
+        [xlsDataMuArr addObject:model.sName];
+        [xlsDataMuArr addObject:model.recordTime];
+        [xlsDataMuArr addObject:model.recordText];
     }
     // 把数组拼接成字符串，连接符是 \t（功能同键盘上的tab键）
     NSString *fileContent = [xlsDataMuArr componentsJoinedByString:@"\t"];
@@ -335,6 +334,16 @@
     [fileManager createFileAtPath:self.filePath contents:fileData attributes:nil];
 }
 
+- (void)createRequest{
+    [RequestService postTaskdetailWithTaskId:@"1" complate:^(id responseObject) {
+        NSArray* dataArr = [MyController arraryWithJsonString:responseObject[@"data"]];
+        self.dataSourceArr = [SolitaireDetailModel mj_objectArrayWithKeyValuesArray:dataArr];
+        [_tableView reloadData];
+        [self createXLSFile];
+    } failure:^(NSError *error) {
+        
+    }];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

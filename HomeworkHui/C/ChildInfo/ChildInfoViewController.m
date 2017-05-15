@@ -8,7 +8,7 @@
 
 #import "ChildInfoViewController.h"
 
-#import "ChildInfoModel.h"
+#import "ChildInfomationModel.h"
 
 #import "ChildInfoTableViewCell.h"
 @interface ChildInfoViewController ()<UITableViewDataSource,UITableViewDelegate>{
@@ -28,13 +28,13 @@
     self.title = @"孩子信息";
     self.dataSourceArr = [[NSMutableArray alloc] init];
     
-    ChildInfoModel* model = [[ChildInfoModel alloc] init];
+    ChildInfomationModel* model = [[ChildInfomationModel alloc] init];
     model.name = @"小明";
     model.classNum = @"双语小学一年级01班";
     model.isCurrnet = YES;
     [self.dataSourceArr addObject:model];
     
-    ChildInfoModel* model1 = [[ChildInfoModel alloc] init];
+    ChildInfomationModel* model1 = [[ChildInfomationModel alloc] init];
     model1.name = @"小红";
     model1.classNum = @"实验小学一年级02班";
     model1.isCurrnet = NO;
@@ -63,11 +63,11 @@
 
 #pragma mark - tableVie点击cell
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    ChildInfoModel* model = self.dataSourceArr[indexPath.row];
+    ChildInfomationModel* model = self.dataSourceArr[indexPath.row];
     if (!model.isCurrnet) {
         model.isCurrnet = YES;
         for (int i = 0; i < self.dataSourceArr.count; i++) {
-            ChildInfoModel* model1 = self.dataSourceArr[i];
+            ChildInfomationModel* model1 = self.dataSourceArr[i];
             if (i != indexPath.row) {
                 model1.isCurrnet = NO;
             }
@@ -84,14 +84,14 @@
         celll = [[ChildInfoTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     celll.selectionStyle = UITableViewCellSelectionStyleNone;
-    ChildInfoModel* model = self.dataSourceArr[indexPath.row];
+    ChildInfomationModel* model = self.dataSourceArr[indexPath.row];
     [celll configCellWithModel:model];
     return celll;
 }
 
 #pragma mark - tableView行高
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    ChildInfoModel *model = nil;
+    ChildInfomationModel *model = nil;
     if (indexPath.row < self.dataSourceArr.count) {
         model = [self.dataSourceArr objectAtIndex:indexPath.row];
     }

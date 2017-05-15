@@ -96,11 +96,15 @@
     
 }
 - (void)configCellWithModel:(SolitaireDetailModel *)model {
-    self.xuhaoLable.text = model.xuhao;
-    self.nameLable.text = model.name;
-    self.timeLable.text = model.time;
-    self.beizhuLable.text = model.beizhu;
-    if (model.isSelf) {
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSData *udata = [user objectForKey:@"cMCurrent"];
+    ChildInfoModel *umodel = [NSKeyedUnarchiver unarchiveObjectWithData:udata];
+    
+    self.xuhaoLable.text = model.sID;
+    self.nameLable.text = model.sName;
+    self.timeLable.text = model.recordTime;
+    self.beizhuLable.text = model.recordText;
+    if ([model.sID isEqualToString:umodel.id]) {
         self.xuhaoLable.textColor = [MyController colorWithHexString:@"00BFFF"];
         self.nameLable.textColor = [MyController colorWithHexString:@"00BFFF"];
         self.timeLable.textColor = [MyController colorWithHexString:@"00BFFF"];

@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface ChildInfoModel : NSObject
+@interface ChildInfoModel : NSObject<NSCoding>
 @property(nonatomic,copy)NSString* name;
 @property(nonatomic,copy)NSString* id;
 @property(nonatomic,copy)NSString* className;
