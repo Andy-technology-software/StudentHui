@@ -48,7 +48,7 @@
         [self makeSendUI];
     }
     
-    [self createRequest];
+//    [self createRequest];
     [_tableView.mj_header beginRefreshing];
 }
 
