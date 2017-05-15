@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21229B431EC959050034FA6D /* RequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B421EC959050034FA6D /* RequestService.m */; };
+		21229B491EC95BE20034FA6D /* ChildInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B481EC95BE20034FA6D /* ChildInfoModel.m */; };
+		21229B4C1EC95BF60034FA6D /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B4B1EC95BF60034FA6D /* UserInfoModel.m */; };
 		213FC0D01EBBFC1E006C393E /* new1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0CF1EBBFC1E006C393E /* new1@2x.png */; };
 		213FC0D21EBBFC8D006C393E /* new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0D11EBBFC8D006C393E /* new2@2x.png */; };
 		213FC0D61EBBFFCD006C393E /* ChildInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */; };
-		213FC0DB1EBC0036006C393E /* ChildInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0DA1EBC0036006C393E /* ChildInfoModel.m */; };
 		213FC0DE1EBC0086006C393E /* ChildInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0DD1EBC0086006C393E /* ChildInfoTableViewCell.m */; };
 		213FC0E01EBC0516006C393E /* ok_select@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0DF1EBC0516006C393E /* ok_select@2x.png */; };
 		213FC0E31EBC088B006C393E /* SolitaireTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0E21EBC088B006C393E /* SolitaireTableViewCell.m */; };
@@ -90,12 +92,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21229B411EC959050034FA6D /* RequestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestService.h; sourceTree = "<group>"; };
+		21229B421EC959050034FA6D /* RequestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestService.m; sourceTree = "<group>"; };
+		21229B471EC95BE20034FA6D /* ChildInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ChildInfoModel.h; path = L/RequestAPI/ChildInfoModel.h; sourceTree = SOURCE_ROOT; };
+		21229B481EC95BE20034FA6D /* ChildInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChildInfoModel.m; path = L/RequestAPI/ChildInfoModel.m; sourceTree = SOURCE_ROOT; };
+		21229B4A1EC95BF60034FA6D /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoModel.h; path = L/RequestAPI/UserInfoModel.h; sourceTree = SOURCE_ROOT; };
+		21229B4B1EC95BF60034FA6D /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = L/RequestAPI/UserInfoModel.m; sourceTree = SOURCE_ROOT; };
 		213FC0CF1EBBFC1E006C393E /* new1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new1@2x.png"; sourceTree = "<group>"; };
 		213FC0D11EBBFC8D006C393E /* new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new2@2x.png"; sourceTree = "<group>"; };
 		213FC0D41EBBFFCD006C393E /* ChildInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoViewController.h; sourceTree = "<group>"; };
 		213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoViewController.m; sourceTree = "<group>"; };
-		213FC0D91EBC0036006C393E /* ChildInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoModel.h; sourceTree = "<group>"; };
-		213FC0DA1EBC0036006C393E /* ChildInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoModel.m; sourceTree = "<group>"; };
 		213FC0DC1EBC0086006C393E /* ChildInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoTableViewCell.h; sourceTree = "<group>"; };
 		213FC0DD1EBC0086006C393E /* ChildInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfoTableViewCell.m; sourceTree = "<group>"; };
 		213FC0DF1EBC0516006C393E /* ok_select@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ok_select@2x.png"; sourceTree = "<group>"; };
@@ -148,7 +154,6 @@
 		ECE384BF1EBB627D00433194 /* UITableViewCell+HYBMasonryAutoCellHeight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableViewCell+HYBMasonryAutoCellHeight.m"; sourceTree = "<group>"; };
 		ECE384C11EBB627D00433194 /* EZHHttpClenit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHHttpClenit.h; sourceTree = "<group>"; };
 		ECE384C21EBB627D00433194 /* EZHHttpClenit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EZHHttpClenit.m; sourceTree = "<group>"; };
-		ECE384C31EBB627D00433194 /* EZHServiceDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EZHServiceDef.h; sourceTree = "<group>"; };
 		ECE384CE1EBB62FA00433194 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		ECE384D01EBB63D200433194 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		ECE384D11EBB63D200433194 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -230,15 +235,6 @@
 			children = (
 				213FC0D41EBBFFCD006C393E /* ChildInfoViewController.h */,
 				213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */,
-			);
-			path = ChildInfo;
-			sourceTree = "<group>";
-		};
-		213FC0D71EBC0025006C393E /* ChildInfo */ = {
-			isa = PBXGroup;
-			children = (
-				213FC0D91EBC0036006C393E /* ChildInfoModel.h */,
-				213FC0DA1EBC0036006C393E /* ChildInfoModel.m */,
 			);
 			path = ChildInfo;
 			sourceTree = "<group>";
@@ -386,7 +382,6 @@
 		ECE384B01EBB600800433194 /* M */ = {
 			isa = PBXGroup;
 			children = (
-				213FC0D71EBC0025006C393E /* ChildInfo */,
 				ECE384E81EBB6FA400433194 /* Login */,
 				ECE384E61EBB6F9200433194 /* Solitaire */,
 				ECE384E41EBB6F8200433194 /* History */,
@@ -440,7 +435,8 @@
 			children = (
 				ECE384C11EBB627D00433194 /* EZHHttpClenit.h */,
 				ECE384C21EBB627D00433194 /* EZHHttpClenit.m */,
-				ECE384C31EBB627D00433194 /* EZHServiceDef.h */,
+				21229B411EC959050034FA6D /* RequestService.h */,
+				21229B421EC959050034FA6D /* RequestService.m */,
 			);
 			path = RequestAPI;
 			sourceTree = "<group>";
@@ -555,6 +551,10 @@
 			children = (
 				213FC0FF1EBC7327006C393E /* LoginModel.h */,
 				213FC1001EBC7327006C393E /* LoginModel.m */,
+				21229B471EC95BE20034FA6D /* ChildInfoModel.h */,
+				21229B481EC95BE20034FA6D /* ChildInfoModel.m */,
+				21229B4A1EC95BF60034FA6D /* UserInfoModel.h */,
+				21229B4B1EC95BF60034FA6D /* UserInfoModel.m */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -828,6 +828,7 @@
 				ECE384F71EBB74D800433194 /* XLPopMenuViewModel.m in Sources */,
 				ECE384CC1EBB627D00433194 /* EZHHttpClenit.m in Sources */,
 				ECE384F61EBB74D800433194 /* XLPopMenuView.m in Sources */,
+				21229B491EC95BE20034FA6D /* ChildInfoModel.m in Sources */,
 				ECE384C61EBB627D00433194 /* BaseViewController.m in Sources */,
 				ECE384C81EBB627D00433194 /* MyController.m in Sources */,
 				ECE384DF1EBB68B200433194 /* HistoryViewController.m in Sources */,
@@ -838,6 +839,7 @@
 				ECE384CB1EBB627D00433194 /* UITableViewCell+HYBMasonryAutoCellHeight.m in Sources */,
 				ECE3852D1EBB864400433194 /* TTOpenInAppActivity.m in Sources */,
 				213FC0F61EBC5572006C393E /* NSDate+Helper.m in Sources */,
+				21229B431EC959050034FA6D /* RequestService.m in Sources */,
 				ECE384DC1EBB68A900433194 /* SolitaireViewController.m in Sources */,
 				ECE3851E1EBB858E00433194 /* SolitaireDetailViewController.m in Sources */,
 				213FC0FE1EBC6A83006C393E /* UITextView+placeholder.m in Sources */,
@@ -845,8 +847,8 @@
 				ECE384D21EBB63D200433194 /* LoginViewController.m in Sources */,
 				ECE384F51EBB74D800433194 /* XLMenuViewCell.m in Sources */,
 				ECE385181EBB81C400433194 /* HistoryModel.m in Sources */,
+				21229B4C1EC95BF60034FA6D /* UserInfoModel.m in Sources */,
 				ECE3847B1EBB5E9800433194 /* main.m in Sources */,
-				213FC0DB1EBC0036006C393E /* ChildInfoModel.m in Sources */,
 				213FC0E91EBC0957006C393E /* SolitaireDetailModel.m in Sources */,
 				213FC0FA1EBC6819006C393E /* FDAlertView.m in Sources */,
 				ECE385121EBB7A5000433194 /* SolitaireModel.m in Sources */,

@@ -40,4 +40,7 @@
 #import "NSDate+Helper.h"
 #import "FDAlertView.h"
 #import "UITextView+placeholder.h"
+
+#import "EZHHttpClenit.h"
+#import "RequestService.h"
 #endif /* PrefixHeader_pch */

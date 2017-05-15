@@ -9,6 +9,10 @@
 #import "LoginViewController.h"
 
 #import "LoginModel.h"
+
+#import "ChildInfoModel.h"
+
+#import "UserInfoModel.h"
 @interface LoginViewController ()<UITableViewDataSource,UITableViewDelegate>{
     UITableView* _tableView;
 }
@@ -108,16 +112,13 @@
         return;
     }else{
 //        [HUD loading];
-        NSDictionary *dict = @{
-                               @"name" : @"小花",
-                               @"school" : @"实验小学1年级1班"
-                               };
-        
-        // This demo just provide simple steps
-        NSManagedObjectContext *context = nil;
-        LoginModel *user = [LoginModel mj_objectWithKeyValues:dict context:context];
-        
-        [(AppDelegate *)[UIApplication sharedApplication].delegate setRootVC];
+        [RequestService postLoginWithUsername:self.nameTF.text AndDevType:@"1" complate:^(id responseObject) {
+//            ChildInfoModel* model = [ChildInfoModel mj_objectWithKeyValues:responseObject[@"data"][@"childInfo"]];
+//            [(AppDelegate *)[UIApplication sharedApplication].delegate setRootVC];
+            NSLog(@"登录请求成功---%@",responseObject[@"data"]);
+        } failure:^(NSError *error) {
+            
+        }];
     }
     
 }
