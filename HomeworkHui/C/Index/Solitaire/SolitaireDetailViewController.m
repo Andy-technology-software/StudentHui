@@ -116,7 +116,7 @@
     UITextView* tf = (UITextView*)[self.popView viewWithTag:10086];
     [alert hide];
     
-    [RequestService postTaskChainWithTaskId:@"1" AndUserId:umodel.id AndStudentId:cmodel.id AndTextHint:tf.text complate:^(id responseObject) {
+    [RequestService postTaskChainWithTaskId:@"3" AndUserId:umodel.id AndStudentId:cmodel.id AndTextHint:tf.text complate:^(id responseObject) {
         [HUD success:responseObject[@"data"]];
         SolitaireDetailModel *model = [[SolitaireDetailModel alloc] init];
         model.sID = cmodel.id;
@@ -365,7 +365,7 @@
 
 - (void)createRequest{
     [self.dataSourceArr removeAllObjects];
-    [RequestService postTaskdetailWithTaskId:@"1" complate:^(id responseObject) {
+    [RequestService postTaskdetailWithTaskId:@"3" complate:^(id responseObject) {
         NSArray* dataArr = [MyController arraryWithJsonString:responseObject[@"data"]];
         self.dataSourceArr = [SolitaireDetailModel mj_objectArrayWithKeyValuesArray:dataArr];
         [_tableView reloadData];

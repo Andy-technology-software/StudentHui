@@ -79,8 +79,9 @@
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if ([responseObject[@"result"] intValue]) {
             !success?:success(responseObject);
+        }else{
+            [HUD warning:@"请检查网络连接"];
         }
-        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         [[UIApplication sharedApplication] setNetworkActivityIndicatorVisible:NO];
         !failure?:failure(error);
