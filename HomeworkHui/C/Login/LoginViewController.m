@@ -109,12 +109,15 @@
 }
 #pragma mark - 登录响应
 - (void)dengluBtnClick{
-    NSLog(@"登录2");
+    [HUD loading];
+    //清除所有数据
+    NSString *bundle = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:bundle];
+    
     if (![RegularExpressions validateMobile:self.nameTF.text]) {
         [HUD warning:@"请正确输入手机号"];
         return;
     }else{
-//        [HUD loading];
         [RequestService postLoginWithUsername:self.nameTF.text AndDevType:@"1" complate:^(id responseObject) {
             NSDictionary* cDic = [MyController dictionaryWithJsonString:responseObject[@"data"]];
             NSArray* cA = cDic[@"childInfo"];
@@ -140,11 +143,11 @@
             NSUserDefaults *userM = [NSUserDefaults standardUserDefaults];
             [userM setObject:udata forKey:@"uModel"];
             
-            
+            [HUD success:@"登录成功"];
             
             [(AppDelegate *)[UIApplication sharedApplication].delegate setRootVC];
         } failure:^(NSError *error) {
-            
+            [HUD warning:@"请检查网络连接"];
         }];
     }
     

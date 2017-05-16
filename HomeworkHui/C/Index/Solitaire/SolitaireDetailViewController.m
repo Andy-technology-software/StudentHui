@@ -98,11 +98,46 @@
 
 #pragma mark - 确定响应
 - (void)sureBtnClick{
+    [HUD loading];
+    
+    //取出本地存储小孩信息
+    NSUserDefaults *child = [NSUserDefaults standardUserDefaults];
+    NSArray *cArr = [child arrayForKey:@"cModel"];
+    ChildInfoModel* cmodel = [NSKeyedUnarchiver unarchiveObjectWithData:[cArr lastObject]];
+    NSLog(@"---%@",cmodel.name);
+    
+    //取出本地存储大人信息
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSData *udata = [user objectForKey:@"uModel"];
+    UserInfoModel *umodel = [NSKeyedUnarchiver unarchiveObjectWithData:udata];
+    NSLog(@"---%@",umodel.name);
+    
+    
     UITextView* tf = (UITextView*)[self.popView viewWithTag:10086];
     [alert hide];
-    //        [HUD loading];
-    //        [self createBindingICCard];
+    
+    [RequestService postTaskChainWithTaskId:@"1" AndUserId:umodel.id AndStudentId:cmodel.id AndTextHint:tf.text complate:^(id responseObject) {
+        [HUD success:responseObject[@"data"]];
+        SolitaireDetailModel *model = [[SolitaireDetailModel alloc] init];
+        model.sID = cmodel.id;
+        model.recordText = tf.text;
+        
+        NSDate *date = [NSDate date];
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateStyle:NSDateFormatterMediumStyle];
+        [formatter setTimeStyle:NSDateFormatterShortStyle];
+        [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+        NSString *DateTime = [formatter stringFromDate:date];
+        
+        model.recordTime = DateTime;
+        model.sName = cmodel.name;
+        [self.dataSourceArr addObject:model];
+        [_tableView reloadData];
+    } failure:^(NSError *error) {
+        [HUD warning:@"请检查网络连接"];
+    }];
 }
+
 - (void)cancleBtnClick{
     [alert hide];
 }
@@ -116,6 +151,10 @@
 
 - (void)rihgtBtnAction{
 //    NSString *filePath = [[NSBundle mainBundle] pathForResource:@"英语接龙" ofType:@"xlsx"];
+    if (!self.dataSourceArr.count) {
+        [HUD warning:@"当前暂无接龙信息"];
+        return;
+    }
     NSURL *URL = [NSURL fileURLWithPath:self.filePath];
     TTOpenInAppActivity *openInAppActivity = [[TTOpenInAppActivity alloc] initWithView:self.view andRect:CGRectMake(0, 0, [MyController getScreenWidth], [MyController getScreenHeight])];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[URL] applicationActivities:@[openInAppActivity]];
@@ -134,23 +173,6 @@
         [self.activityPopoverController presentPopoverFromRect:self.view.frame inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
     }
 }
-
-//- (void)makeData{
-//    for (int i = 0; i < 10; i++) {
-//        SolitaireDetailModel* model = [[SolitaireDetailModel alloc] init];
-//        model.xuhao = [NSString stringWithFormat:@"%d",i + 1];
-//        model.name = @"小明";
-//        model.time = @"2017-05-04";
-//        model.beizhu = @"这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注 这就是备注";
-//        model.isSelf = NO;
-//        if (i == 6) {
-//            model.isSelf = YES;
-//        }
-//        [self.dataSourceArr addObject:model];
-//    }
-//    
-//    [self createXLSFile];
-//}
 #pragma mark - 初始化tableView
 - (void)createTableView{
     self.automaticallyAdjustsScrollViewInsets = NO;
@@ -177,8 +199,7 @@
 #pragma mark - 下拉刷新
 - (void)headRefresh{
     self.pageIndex = 1;
-    //    [self createRequest];
-    [_tableView.mj_header endRefreshing];
+    [self createRequest];
 }
 
 #pragma mark - tableView行数
@@ -254,7 +275,7 @@
     [self.timeLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(0);
         make.height.mas_offset(40);
-        make.width.mas_offset(100);
+        make.width.mas_offset(160);
     }];
     
     self.nameLable = [[UILabel alloc] init];
@@ -328,21 +349,33 @@
     NSData *fileData = [muStr dataUsingEncoding:NSUTF16StringEncoding];
     // 文件路径
     NSString *path = NSHomeDirectory();
-    self.filePath = [path stringByAppendingPathComponent:@"/Documents/jielong.xls"];
+    
+    NSDate *date = [NSDate date];
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateStyle:NSDateFormatterMediumStyle];
+    [formatter setTimeStyle:NSDateFormatterShortStyle];
+    [formatter setDateFormat:@"YYYY-MM-dd hh:mm:ss"];
+    NSString *DateTime = [formatter stringFromDate:date];
+    
+    self.filePath = [path stringByAppendingPathComponent:[NSString stringWithFormat:@"/Documents/%@jielong.xls",DateTime]];
     NSLog(@"文件路径：\n%@",self.filePath);
     // 生成xls文件
     [fileManager createFileAtPath:self.filePath contents:fileData attributes:nil];
 }
 
 - (void)createRequest{
+    [self.dataSourceArr removeAllObjects];
     [RequestService postTaskdetailWithTaskId:@"1" complate:^(id responseObject) {
         NSArray* dataArr = [MyController arraryWithJsonString:responseObject[@"data"]];
         self.dataSourceArr = [SolitaireDetailModel mj_objectArrayWithKeyValuesArray:dataArr];
         [_tableView reloadData];
-        [self createXLSFile];
+        if (self.dataSourceArr.count) {
+            [self createXLSFile];
+        }
     } failure:^(NSError *error) {
-        
+        [HUD warning:@"请检查网络连接"];
     }];
+    [_tableView.mj_header endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

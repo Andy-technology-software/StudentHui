@@ -16,5 +16,5 @@
 @property(nonatomic,copy)NSString* gradeId;
 @property(nonatomic,copy)NSString* gradeName;
 @property(nonatomic,copy)NSString* schoolName;
-
+@property(nonatomic,assign)BOOL isCurrnet;
 @end

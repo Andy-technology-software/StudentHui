@@ -32,11 +32,25 @@
 
 
 /**
- 任务详情
+ 获取接龙任务详情
  
  @param taskId 任务id
  @param complate 请求完成
  @param failure 请求失败
  */
 +(void)postTaskdetailWithTaskId:(NSString*)taskId complate:(HttpSuccessBlock)complate failure:(HttpFailureBlock)failure;
+
+
+/**
+ 开始接龙
+
+ @param taskId 任务id
+ @param userId 家长id
+ @param studentId 学生id
+ @param textHint 备注
+ @param complate 请求成功
+ @param failure 请求失败
+ */
++(void)postTaskChainWithTaskId:(NSString*)taskId AndUserId:(NSString*)userId AndStudentId:(NSString*)studentId AndTextHint:(NSString*)textHint complate:(HttpSuccessBlock)complate failure:(HttpFailureBlock)failure;
+
 @end

@@ -10,7 +10,6 @@
 		21229B431EC959050034FA6D /* RequestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B421EC959050034FA6D /* RequestService.m */; };
 		21229B491EC95BE20034FA6D /* ChildInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B481EC95BE20034FA6D /* ChildInfoModel.m */; };
 		21229B4C1EC95BF60034FA6D /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B4B1EC95BF60034FA6D /* UserInfoModel.m */; };
-		21229B501EC975F10034FA6D /* ChildInfomationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 21229B4F1EC975F10034FA6D /* ChildInfomationModel.m */; };
 		213FC0D01EBBFC1E006C393E /* new1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0CF1EBBFC1E006C393E /* new1@2x.png */; };
 		213FC0D21EBBFC8D006C393E /* new2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 213FC0D11EBBFC8D006C393E /* new2@2x.png */; };
 		213FC0D61EBBFFCD006C393E /* ChildInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 213FC0D51EBBFFCD006C393E /* ChildInfoViewController.m */; };
@@ -98,8 +97,6 @@
 		21229B481EC95BE20034FA6D /* ChildInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ChildInfoModel.m; path = L/RequestAPI/ChildInfoModel.m; sourceTree = SOURCE_ROOT; };
 		21229B4A1EC95BF60034FA6D /* UserInfoModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInfoModel.h; path = L/RequestAPI/UserInfoModel.h; sourceTree = SOURCE_ROOT; };
 		21229B4B1EC95BF60034FA6D /* UserInfoModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UserInfoModel.m; path = L/RequestAPI/UserInfoModel.m; sourceTree = SOURCE_ROOT; };
-		21229B4E1EC975F10034FA6D /* ChildInfomationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfomationModel.h; sourceTree = "<group>"; };
-		21229B4F1EC975F10034FA6D /* ChildInfomationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChildInfomationModel.m; sourceTree = "<group>"; };
 		213FC0CF1EBBFC1E006C393E /* new1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new1@2x.png"; sourceTree = "<group>"; };
 		213FC0D11EBBFC8D006C393E /* new2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "new2@2x.png"; sourceTree = "<group>"; };
 		213FC0D41EBBFFCD006C393E /* ChildInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChildInfoViewController.h; sourceTree = "<group>"; };
@@ -230,15 +227,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		21229B4D1EC975E60034FA6D /* ChildInfomationModel */ = {
-			isa = PBXGroup;
-			children = (
-				21229B4E1EC975F10034FA6D /* ChildInfomationModel.h */,
-				21229B4F1EC975F10034FA6D /* ChildInfomationModel.m */,
-			);
-			path = ChildInfomationModel;
-			sourceTree = "<group>";
-		};
 		213FC0D31EBBFFAE006C393E /* ChildInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,7 +379,6 @@
 		ECE384B01EBB600800433194 /* M */ = {
 			isa = PBXGroup;
 			children = (
-				21229B4D1EC975E60034FA6D /* ChildInfomationModel */,
 				ECE384E81EBB6FA400433194 /* Login */,
 				ECE384E61EBB6F9200433194 /* Solitaire */,
 				ECE384E41EBB6F8200433194 /* History */,
@@ -833,7 +820,6 @@
 				213FC0EC1EBC4D2F006C393E /* HistoryDetailViewController.m in Sources */,
 				ECE384CA1EBB627D00433194 /* UITableView+HYBCacheHeight.m in Sources */,
 				213FC0E31EBC088B006C393E /* SolitaireTableViewCell.m in Sources */,
-				21229B501EC975F10034FA6D /* ChildInfomationModel.m in Sources */,
 				ECE384F71EBB74D800433194 /* XLPopMenuViewModel.m in Sources */,
 				ECE384CC1EBB627D00433194 /* EZHHttpClenit.m in Sources */,
 				ECE384F61EBB74D800433194 /* XLPopMenuView.m in Sources */,

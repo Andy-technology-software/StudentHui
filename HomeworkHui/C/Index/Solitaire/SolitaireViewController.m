@@ -33,8 +33,6 @@
     [self createTableView];
     
     [_tableView.mj_header beginRefreshing];
-    
-//    [self createRequest];
 }
 - (void)makeData{
     for (int i = 0; i < 10; i++) {
@@ -75,8 +73,7 @@
 - (void)headRefresh{
     self.pageIndex = 1;
     
-    //    [self createRequest];
-    [_tableView.mj_header endRefreshing];
+    [self createRequest];
 }
 #pragma mark - 上拉加载
 - (void)footRefresh{
@@ -97,6 +94,7 @@
     SolitaireModel* model = self.dataSourceArr[indexPath.row];
     SolitaireDetailViewController* vc = [[SolitaireDetailViewController alloc] init];
     vc.isSend = model.isSend;
+    vc.taskId = model.taskId;
     [self.navigationController pushViewController:vc animated:YES];
 }
 
@@ -148,8 +146,9 @@
         self.dataSourceArr = [SolitaireModel mj_objectArrayWithKeyValuesArray:dataArr];
         [_tableView reloadData];
     } failure:^(NSError *error) {
-        
+        [HUD warning:@"请检查网络连接"];
     }];
+    [_tableView.mj_header endRefreshing];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

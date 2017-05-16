@@ -37,7 +37,7 @@
     self.xuhaoLable.font = [UIFont systemFontOfSize:14];
     
     [self.xuhaoLable mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.mas_equalTo(5);
+        make.left.mas_equalTo(0);
         make.centerY.mas_equalTo(self.contentView);
         make.width.mas_offset(60);
     }];
@@ -51,7 +51,7 @@
     [self.timeLable mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.mas_equalTo(-5);
         make.top.mas_equalTo(10);
-        make.width.mas_offset(100);
+        make.width.mas_offset(160);
     }];
     
     self.nameLable = [[UILabel alloc] init];
@@ -68,6 +68,7 @@
     
     self.beizhuLable = [[UILabel alloc] init];
     [self.contentView addSubview:self.beizhuLable];
+    self.beizhuLable.textAlignment = NSTextAlignmentRight;
     self.beizhuLable.numberOfLines = 0;
     self.beizhuLable.textColor = [MyController colorWithHexString:@"A3A3A3"];
     self.beizhuLable.font = [UIFont systemFontOfSize:12];
@@ -103,7 +104,7 @@
     self.xuhaoLable.text = model.sID;
     self.nameLable.text = model.sName;
     self.timeLable.text = model.recordTime;
-    self.beizhuLable.text = model.recordText;
+    self.beizhuLable.text = [NSString stringWithFormat:@"备注：%@",model.recordText];
     if ([model.sID isEqualToString:umodel.id]) {
         self.xuhaoLable.textColor = [MyController colorWithHexString:@"00BFFF"];
         self.nameLable.textColor = [MyController colorWithHexString:@"00BFFF"];

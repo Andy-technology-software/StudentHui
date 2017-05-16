@@ -8,7 +8,7 @@
 
 #import "ChildInfoTableViewCell.h"
 
-#import "ChildInfomationModel.h"
+#import "ChildInfoModel.h"
 
 @interface ChildInfoTableViewCell()
 @property(nonatomic,strong)UILabel* nameLable;
@@ -83,10 +83,15 @@
 
 }
 
-- (void)configCellWithModel:(ChildInfomationModel *)model {
+- (void)configCellWithModel:(ChildInfoModel *)model {
+    //取出当前小孩
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSData *udata = [user objectForKey:@"cMCurrent"];
+    ChildInfoModel *umodel = [NSKeyedUnarchiver unarchiveObjectWithData:udata];
+    
     self.nameLable.text = model.name;
-    self.classNumLable.text = model.classNum;
-    if (model.isCurrnet) {
+    self.classNumLable.text = model.className;
+    if ([model.id isEqualToString:umodel.id]) {
         self.currnetIV.image = [UIImage imageNamed:@"ok_select"];
     }else{
         self.currnetIV.image = [UIImage imageNamed:@""];

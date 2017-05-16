@@ -64,10 +64,18 @@
                  apsForProduction:NO
             advertisingIdentifier:nil];
     
-    NSArray* dataArr = [[NSArray alloc] init];
-    if (dataArr.count) {
+    //取出本地存储小孩信息
+    NSUserDefaults *child = [NSUserDefaults standardUserDefaults];
+    NSArray *cArr = [child arrayForKey:@"cModel"];
+    //取出当前小孩
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    NSData *udata = [user objectForKey:@"cMCurrent"];
+    ChildInfoModel *umodel = [NSKeyedUnarchiver unarchiveObjectWithData:udata];
+    NSLog(@"---%@",umodel.name);
+
+    if (cArr.count) {
         //设置推送别名
-        [JPUSHService setAlias:@"111111" callbackSelector:@selector(callBack) object:nil];
+        [JPUSHService setAlias:umodel.id callbackSelector:@selector(callBack) object:nil];
         [self setRootVC];
     }else{
         [self setLoginRoot];

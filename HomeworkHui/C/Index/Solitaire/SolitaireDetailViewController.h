@@ -10,4 +10,5 @@
 
 @interface SolitaireDetailViewController : BaseViewController
 @property(nonatomic,assign)BOOL isSend;
+@property(nonatomic,copy)NSString* taskId;
 @end

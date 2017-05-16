@@ -138,6 +138,9 @@
         
         NSLog(@"index= %ld",(long)index);
         if (1 == index) {
+            //清除所有数据
+            NSString *bundle = [[NSBundle mainBundle] bundleIdentifier];
+            [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:bundle];
             [(AppDelegate *)[UIApplication sharedApplication].delegate setLoginRoot];
         }else if (0 == index){
             ChildInfoViewController* vc = [[ChildInfoViewController alloc] init];
@@ -160,7 +163,6 @@
     return @[@"child",
              @"logout"];
 }
-
 /*
 #pragma mark - Navigation
 

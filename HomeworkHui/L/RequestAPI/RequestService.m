@@ -64,4 +64,25 @@
         !failure?:failure(error);
     }];
 }
+
+/**
+ 开始接龙
+ 
+ @param taskId 任务id
+ @param userId 家长id
+ @param studentId 学生id
+ @param textHint 备注
+ @param complate 请求成功
+ @param failure 请求失败
+ */
++(void)postTaskChainWithTaskId:(NSString*)taskId AndUserId:(NSString*)userId AndStudentId:(NSString*)studentId AndTextHint:(NSString*)textHint complate:(HttpSuccessBlock)complate failure:(HttpFailureBlock)failure{
+    NSString* path = @"http://139.196.213.209:8180/app/task!taskChain.action";
+    NSDictionary* param = @{@"taskId":taskId,@"userId":userId,@"studentId":studentId,@"textHint":textHint};
+    
+    [EZHHttpClenit postWithOldURLString:path params:param WithSuccess:^(id responseObject) {
+        !complate?:complate(responseObject);
+    } WithFailure:^(NSError *error) {
+        !failure?:failure(error);
+    }];
+}
 @end
